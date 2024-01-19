@@ -1,0 +1,35 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"upperbase_link" [label="upperbase_link"];
+"torso_link" [label="torso_link"];
+"shoulder_link" [label="shoulder_link"];
+"upperarm_link" [label="upperarm_link"];
+"arm_link" [label="arm_link"];
+"elbow_link" [label="elbow_link"];
+"forearm_link" [label="forearm_link"];
+"wrist_link" [label="wrist_link"];
+"hand_link" [label="hand_link"];
+"end_link" [label="end_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_joint" -> "upperbase_link"
+"upperbase_link" -> "upperbase_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"upperbase_joint" -> "torso_link"
+"torso_link" -> "torso_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"torso_joint" -> "shoulder_link"
+"shoulder_link" -> "shoulder_joint" [label="xyz: 0 0 0.35 \nrpy: 0 -1.5708 0"]
+"shoulder_joint" -> "upperarm_link"
+"upperarm_link" -> "upperarm_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"upperarm_joint" -> "arm_link"
+"arm_link" -> "arm_joint" [label="xyz: 0 0 0.4 \nrpy: 0 -0 0"]
+"arm_joint" -> "elbow_link"
+"elbow_link" -> "elbow_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"elbow_joint" -> "forearm_link"
+"forearm_link" -> "forearm_joint" [label="xyz: 0 0 0.05 \nrpy: 0 -0 0"]
+"forearm_joint" -> "wrist_link"
+"wrist_link" -> "wrist_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"wrist_joint" -> "hand_link"
+"hand_link" -> "hand_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"hand_joint" -> "end_link"
+}
